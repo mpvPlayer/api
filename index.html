@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>mvpPlayer - API documentation</title>
+<!DOCTYPE html><html><head><title>mpvPlayer - API documentation</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1318,11 +1318,11 @@ window.addEventListener("load", function() {
 	<article class="section section--separated" id="intro">
 	<div class="section__content container container--content">
 		<div class="rtc rtc--final"
-			<h1 class="rtc__title">mvpPlayer API <span class="version">v10.07</span></h1>
+			<h1 class="rtc__title">mpvPlayer API <span class="version">v10.07</span></h1>
 			<p class="rtc__base-uri">
 				<span class="rtc__base-uri__icon">
 				<i title="URL" class="material-icons">link</i></span>
-				<a class="rtc__base-uri__link" href="https://mvpplayer.com/api/v10" target="_blank">https://mvpplayer.com/api/v10</a>
+				<a class="rtc__base-uri__link" href="https://mpvplayer.com/api/v10" target="_blank">https://mpvplayer.com/api/v10</a>
 			</p>
 		</div>
 	</div>
@@ -1334,7 +1334,7 @@ window.addEventListener("load", function() {
 		<h2 class="rtc__title">Introduction</h2>
 		<p>Welcome to mpvPlayer API Guide.</p>
 		<p>This Guide is supposed to clarify the way how you can work with <a href="https://mpvPlayer.com">mpvPlayer.com</a> API.</p>
-		<p>Using the following documentation you can automate the most often actions with mvpPlayer.</p>
+		<p>Using the following documentation you can automate the most often actions with mpvPlayer.</p>
 	</div>
 	<div class="section__sidecode"></div>
 	</article>
@@ -1354,10 +1354,10 @@ window.addEventListener("load", function() {
 	<div class="section__content container container--content rtc rtc--final">
 		<h2 class="rtc__title">Add a player to your website</h2>
 		<p>The player's script is simple placed in the head tag of the page and integration code for <i><code class="language-json">player</code></i> container</p>
-			<pre><code class="language-js">&lt;div id="mvpplayer"&gt;&lt;/div&gt;
+			<pre><code class="language-js">&lt;div id="mpvplayer"&gt;&lt;/div&gt;
 
 &lt;script&gt;
-   var player = new mpvPlayer({id:"mvpplayer", file:"//url.com/v.mp4"});
+   var player = new mpvPlayer({id:"mpvplayer", file:"//url.com/v.mp4"});
 &lt;/script&gt;</code></pre>
 		
 		<br />
@@ -1389,7 +1389,7 @@ window.addEventListener("load", function() {
 		<h5 id="request">Request:</h5>
 		<pre><code class="language-console">$ curl -X POST\
 -H "Content-type: application/json" &#39;{"acess_token":"yourtoken"}&#39;\ 
-https://mvpplayer.com/api/v10/test</code></pre>
+https://mpvplayer.com/api/v10/test</code></pre>
 		<br />
 		<h5 id="response">Response:</h5><pre><code class="language-json">{
 "status":"success",
@@ -1402,7 +1402,7 @@ https://mvpplayer.com/api/v10/test</code></pre>
 		<pre><code class="language-console">$ curl -X POST\
 -H "Content-type: application/json"\
 &#39;{"username":"yourbox@email.com","password":"yourpassword"}&#39;\ 
-https://mvpplayer.com/api/v10/login		</code></pre><br />
+https://mpvplayer.com/api/v10/login		</code></pre><br />
 		<p>You will receive <code>auth_token</code> in server response if your login and password are correct.</p>
 		<h5 id="response-1">Response:</h5>
 		<pre><code class="language-json">{
@@ -1429,7 +1429,7 @@ string(ldtrf4o3gf59s148723gsxbq50)
 		<h5 id="request-2">Request:</h5><pre><code class="language-console">$ curl -X POST\
 -H "Content-type: application/json"\
 -d &#39;{"username":"yourbox@email.com","password":"yourpassword"}&#39;\ 
-https://mvpplayer.com/api/v10/login</code></pre><h5 id="response-2">Response:</h5><pre><code class="language-json">{
+https://mpvplayer.com/api/v10/login</code></pre><h5 id="response-2">Response:</h5><pre><code class="language-json">{
 "message":"Please verify your request via re captcha challenge",
 "status":"error",
 "code":406,
@@ -1438,11 +1438,11 @@ https://mvpplayer.com/api/v10/login</code></pre><h5 id="response-2">Response:</h
 		<br /><p>At first, you should get a unique page with Google captcha.</p>
 		<h5 id="request-3">Request:</h5>
 		<pre><code class="language-console">$ curl -X POST -H "Content-type: application/json"\
-https://mvpplayer.com/api/v10/requestReCaptcha</code></pre><h5 id="response-3">Response:</h5><pre><code class="language-json">{
+https://mpvplayer.com/api/v10/requestReCaptcha</code></pre><h5 id="response-3">Response:</h5><pre><code class="language-json">{
 "status":"success",
 "code":200,
 "challenge":"9c726b3ce8b34",
-"captcha_url":"https://mvpplayer.com/api/v10/requestReCaptcha?id=9c726b3ce8b34"
+"captcha_url":"https://mpvplayer.com/api/v10/requestReCaptcha?id=9c726b3ce8b34"
 }</code></pre>
 		<br />
 		<p>Open <code>captcha_url</code> in your browser and proceed verification. After you receive a link to a unique page with Google captcha and <code>re_captcha_challenge</code> you should open this link, pass captcha, and get unique code <code>re_captcha_response</code>.</p>
@@ -1452,7 +1452,7 @@ https://mvpplayer.com/api/v10/requestReCaptcha</code></pre><h5 id="response-3">R
 -d &#39;{"username":"yourbox@email.com","password":"yourpassword"\
 "re_captcha_challenge":"9c726b3ce8b34",\
 "re_captcha_response":"9c726b3ce8b349c726b3ce8b349c726b3ce8b34"}&#39; \ 
-https://mvpplayer.com/api/v10/login
+https://mpvplayer.com/api/v10/login
 </code></pre>
 		<h5 id="response-4">Response:</h5>
 		<pre><code class="language-json">{
@@ -1480,7 +1480,7 @@ int(200)
 ["challenge"]=&gt;
 string(13) "807a330502f04"
 ["captcha_url"]=&gt;
-string(59) "https://mvpplayer.com/api/v10/reCaptcha.html?id=807a330502f04"
+string(59) "https://mpvplayer.com/api/v10/reCaptcha.html?id=807a330502f04"
 }
 */</code></pre>
 		<br />
@@ -1510,7 +1510,7 @@ string(ldtrf4o3gf59s148723gsxbq50)
 	<h3 id="example">Example:</h3><h5 id="request">Request:</h5><pre><code class="language-console">$ curl -X POST\
 -H "Content-type: application/json"\
 -d &#39;{"file":"URL"}&#39; \ 
-https://mvpplayer.com/api/v10/getVideoStatus
+https://mpvplayer.com/api/v10/getVideoStatus
 </code></pre><h5 id="response">Response:</h5><pre><code class="language-json">{
 "status":"success",
 "code":200,
@@ -1550,7 +1550,7 @@ https://mvpplayer.com/api/v10/getVideoStatus
 	<div class="section-group section-group--separated"><div class="section"><div class="section__content container container--inner"><div class="content-group"><div class="rtc rtc--final">
 		<p>To control the player and requests via Javascript, use the <code>api</code> operator:</p>
 	</div></div></div>
-	<div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs js">var player = new mvpPlayer({...});
+	<div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs js">var player = new mpvPlayer({...});
 console.log(player.api("id"));
 player.api("play");</code></pre>
   </div></div></div>
@@ -1954,7 +1954,7 @@ function PlayerReady(id){
 	<div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs bash">curl -X POST \
   -H "Content-type: application/json"
   -d @body.json \
-  https://mvpplayer.com/api/v10/login</code></pre>
+  https://mpvplayer.com/api/v10/login</code></pre>
   </div></div></div>
   <div class="section-group section-group--separated" id="resources:/login:post:request-body">
   <div class="section section-group__header">
@@ -1991,11 +1991,11 @@ function PlayerReady(id){
 
 
 <article class="record record--resource record--method-post" id="resources:/requestReCaptcha:post"><header class="record__header section"><h3 class="record__header__title section__content"><span class="record__header__method">post</span> <span class="record__header__label"><span class="record__header__name"><span class="record__header__parent-url"></span><span class="record__header__rel-uri">/requestReCaptcha</span></span></span></h3><div class="section__sidecode section__sidecode--heading"><span class="record__header__altname"></span> <span class="record__header__flags">&nbsp;</span></div></header><section class="record__content"><div class="section-group section-group--separated"><div class="section"><div class="section__content container container--inner"><div class="content-group"><div class="rtc rtc--final"><p>This method returns <code>re_captcha_challenge</code> and link on a page with <a href="https://www.google.com/recaptcha/intro/v3.html">Google</a> recaptcha.</p><p>If you perform authorization from doubtful IP addresses you have to pass verification</p></div></div></div><div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs bash">curl -X POST \
-   https://mvpplayer.com/api/v10/requestReCaptcha</code></pre></div></div></div><div class="section-group section-group--separated record__response" id="resources:/requestReCaptcha:post:response-200"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/requestReCaptcha:post:response-200"><span class="content-group__title__label"><span class="status-code status-code--2xx">200 OK</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">application/json</span></h4><p class="type__key">application/json</p></header><div class="type__description property property__info"></div><table class="table"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><tbody class="table__body table__body--type"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">status</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>success</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">code</span><span class="property__required">*</span></th><td class="table__col--type">int</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>200</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">challenge</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: 4fd7s3sddb3a9</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">captcha_url</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: <a href="https://mvpplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9">https://mvpplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9</a></p></div></td></tr></tbody></table></div><div class="section__sidecode"><div class="type__sidecode"><div class="container--inner"><h3 class="sidecode__title">Response Body</h3><pre class="code-example"><code class="hljs json">{
+   https://mpvplayer.com/api/v10/requestReCaptcha</code></pre></div></div></div><div class="section-group section-group--separated record__response" id="resources:/requestReCaptcha:post:response-200"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/requestReCaptcha:post:response-200"><span class="content-group__title__label"><span class="status-code status-code--2xx">200 OK</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">application/json</span></h4><p class="type__key">application/json</p></header><div class="type__description property property__info"></div><table class="table"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><tbody class="table__body table__body--type"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">status</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>success</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">code</span><span class="property__required">*</span></th><td class="table__col--type">int</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>200</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">challenge</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: 4fd7s3sddb3a9</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">captcha_url</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: <a href="https://mpvplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9">https://mpvplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9</a></p></div></td></tr></tbody></table></div><div class="section__sidecode"><div class="type__sidecode"><div class="container--inner"><h3 class="sidecode__title">Response Body</h3><pre class="code-example"><code class="hljs json">{
     "status":"success",
     "code":200,
     "challenge":"4fd7s3sddb3a9",
-    "captcha_url":" https://mvpplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9"
+    "captcha_url":" https://mpvplayer.com/api/v10/reCaptcha.html?id=4fd7s3sddb3a9"
 }
 </code></pre></div></div></div></div></div></div><div class="section-group section-group--separated record__response collapsible--collapsed" id="resources:/requestReCaptcha:post:response-403"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/requestReCaptcha:post:response-403"><span class="content-group__title__label"><span class="status-code status-code--4xx">403 Forbidden</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">application/json</span></h4><p class="type__key">application/json</p></header><div class="type__description property property__info"></div><table class="table"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><tbody class="table__body table__body--type"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">status</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>error</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">code</span><span class="property__required">*</span></th><td class="table__col--type">integer</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>403</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">errorCode</span><span class="property__required">*</span></th><td class="table__col--type">integer</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><ul><li><strong>71</strong> - Login attempts exceeded</li><li><strong>72</strong> - Account banned</li><li><strong>73</strong> - No allow access from network</li><li><strong>74</strong> - Unknown login error</li><li><strong>75</strong> - Illegal session IP</li><li><strong>76</strong> - Account stolen</li><li><strong>77</strong> - Network banned</li></ul></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">message</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: Network banned</p></div></td></tr></tbody></table></div><div class="section__sidecode"><div class="type__sidecode"><div class="container--inner"><h3 class="sidecode__title">Response Body</h3><pre class="code-example"><code class="hljs json">{
     "status":"error",
@@ -2007,7 +2007,7 @@ function PlayerReady(id){
 
 <article class="record record--resource record--method-get" id="resources:/reCaptcha:get"><header class="record__header section"><h3 class="record__header__title section__content"><span class="record__header__method">get</span> <span class="record__header__label"><span class="record__header__name"><span class="record__header__parent-url"></span><span class="record__header__rel-uri">/reCaptcha</span></span></span></h3><div class="section__sidecode section__sidecode--heading"><span class="record__header__altname"></span> <span class="record__header__flags">&nbsp;</span></div></header>
 <section class="record__content"><div class="section-group section-group--separated"><div class="section"><div class="section__content container container--inner"><div class="content-group"><div class="rtc rtc--final"><p>This method returns an html page with Google captcha.</p></div></div><div class="content-group" id="resources:/reCaptcha:get:params"><h3 class="content-group__title collapsible__toggler collapsible__head" data-target="resources:/reCaptcha:get:params"><span class="content-group__title__label">Parameters</span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><table class="table collapsible__el"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><thead class="table__heading"><tr><th class="table__col--title" colspan="3">Query</th></tr></thead><tbody class="table__body table__body--params"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">id</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>example: 4fd7s3sddb3a9</p></div></td></tr></tbody></table></div></div><div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs bash">curl -X GET \
-   https://mvpplayer.com/api/v10/reCaptcha?id=&lt;value&gt;</code></pre></div></div></div><div class="section-group section-group--separated record__response" id="resources:/reCaptcha:get:response-200"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/reCaptcha:get:response-200"><span class="content-group__title__label"><span class="status-code status-code--2xx">200 OK</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">text/html</span></h4><p class="type__key">text/html</p></header><div class="type__description property property__info"></div></div><div class="section__sidecode"><div class="type__sidecode"></div></div></div></div></div><div class="section-group section-group--separated record__response collapsible--collapsed" id="resources:/reCaptcha:get:response-400"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/reCaptcha:get:response-400"><span class="content-group__title__label"><span class="status-code status-code--4xx">400 Bad Request</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">application/json</span></h4><p class="type__key">application/json</p></header><div class="type__description property property__info"></div><table class="table"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><tbody class="table__body table__body--type"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">status</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>error</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">code</span><span class="property__required">*</span></th><td class="table__col--type">integer</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>400</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">message</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"></td></tr></tbody></table></div><div class="section__sidecode"><div class="type__sidecode"><div class="container--inner"><h3 class="sidecode__title">Response Body</h3><pre class="code-example"><code class="hljs json">{
+   https://mpvplayer.com/api/v10/reCaptcha?id=&lt;value&gt;</code></pre></div></div></div><div class="section-group section-group--separated record__response" id="resources:/reCaptcha:get:response-200"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/reCaptcha:get:response-200"><span class="content-group__title__label"><span class="status-code status-code--2xx">200 OK</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">text/html</span></h4><p class="type__key">text/html</p></header><div class="type__description property property__info"></div></div><div class="section__sidecode"><div class="type__sidecode"></div></div></div></div></div><div class="section-group section-group--separated record__response collapsible--collapsed" id="resources:/reCaptcha:get:response-400"><div class="section section-group__header"><div class="section__content container--inner"><h3 class="content-group__title content-group__title--sticky collapsible__toggler collapsible__head" data-target="resources:/reCaptcha:get:response-400"><span class="content-group__title__label"><span class="status-code status-code--4xx">400 Bad Request</span></span> <i title="Expand" class="material-icons collapsible--when-collapsed">chevron_right</i> <i title="Collapse" class="material-icons collapsible--when-not-collapsed">expand_more</i></h3><div class="content-group__description rtc rtc--final content-group__description--last collapsible__el"></div><div class="collapsible__el"></div></div><div class="section__sidecode"></div></div><div class="section-group__content collapsible__el"><div class="section type"><div class="section__content container--inner"><header class="type__header"><h4 class="type__title"><span class="type__display-name">application/json</span></h4><p class="type__key">application/json</p></header><div class="type__description property property__info"></div><table class="table"><thead class="table__head"><tr><th class="table__col--name">Parameter</th><th class="table__col--type">Type</th><th class="table__col--description">Description</th></tr></thead><tbody class="table__body table__body--type"><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">status</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>error</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">code</span><span class="property__required">*</span></th><td class="table__col--type">integer</td><td class="table__col--description property__info"><div class="property__description rtc rtc--final"><p>400</p></div></td></tr><tr class="property"><th class="table__col--name"><span class="property__prefix"></span><span class="property__name">message</span><span class="property__required">*</span></th><td class="table__col--type">string</td><td class="table__col--description property__info"></td></tr></tbody></table></div><div class="section__sidecode"><div class="type__sidecode"><div class="container--inner"><h3 class="sidecode__title">Response Body</h3><pre class="code-example"><code class="hljs json">{
     "status":"error",
     "code":400,
     "message":"Id not found"
@@ -2033,7 +2033,7 @@ function PlayerReady(id){
 		<span class="record__header__altname">Custom Scheme</span>
 	</div>
 </header><section class="record__content"><div class="section-group section-group--separated"><div class="section"><div class="section__content container container--inner"><div class="content-group"><div class="rtc rtc--final">	<p>To start using API you need to have mpvPlayer user account. You can set <code>access_token</code> parameter while running any methods from this API. You can find the <code>access_token</code> on your Account Space</li></div></div></div><div class="section__sidecode"><pre class="container container--inner code-example"><code class="hljs bash">curl -X &lt;method&gt; \
-  https://mvpplayer.com/api/v10/&lt;path&gt;</code></pre></div></div></div></section></article>
+  https://mpvplayer.com/api/v10/&lt;path&gt;</code></pre></div></div></div></section></article>
   
  </section></div>
  </body>

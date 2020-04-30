@@ -1,5 +1,5 @@
-Premium Video Player https://mvpplayer.com/
+Premium Video Player https://mpvplayer.com/
 
-API base url: https://mvpplayer.com/api/v10/
+API base url: https://mpvplayer.com/api/v10/
 
-API documentation: https://mpvplayer.github.io/api/
+API documentation: https://mpvPlayerAPI.github.io
